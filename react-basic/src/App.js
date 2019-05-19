@@ -53,7 +53,8 @@ class App extends Component {
   render()
   {
     const style = {
-      backgroundColor: 'Red',
+      backgroundColor: 'green',
+      color: 'white',
       padding: '8px',
       cursor: 'pointer'
     };
@@ -86,11 +87,23 @@ class App extends Component {
               age={this.state.persons[2].age} /> */}
           </div>
       )
+
+      style.backgroundColor = 'red';
     }
+
+    let classes = [];
+    if(this.state.persons.length <= 2){
+      classes.push('red');
+    }
+    if(this.state.persons.length <= 1){
+      classes.push('bold');
+    }
+
+
     return (
       <div className="App">
         <h1>Hi, I am Tanmay.</h1>
-        <p>This is working</p>
+        <p className={classes.join(' ')}>This is working</p>
         <button 
           style={style}
           onClick={this.showHidePerson}>Show / Hide</button>
