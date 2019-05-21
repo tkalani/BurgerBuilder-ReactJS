@@ -65,6 +65,8 @@ class App extends Component {
     };
 
     let persons = null;
+    let btnClass = '';
+
     if(this.state.showPersons)
     {
       persons = (
@@ -92,7 +94,8 @@ class App extends Component {
               age={this.state.persons[2].age} /> */}
           </div>
       )
-
+      
+      // btnClass = classes_App.Red;
       style.backgroundColor = 'red';
       // style[':hover'] = {
       //   backgroundColor: 'salmon',
@@ -111,12 +114,14 @@ class App extends Component {
 
     return (
       // <StyleRoot>
+      // <div className={classes_App.App}>
       <div className="App">
         <h1>Hi, I am Tanmay.</h1>
         <p className={classes.join(' ')}>This is working</p>
         <button 
           style={style}
-          onClick={this.showHidePerson}>Show / Hide</button>
+          onClick={this.showHidePerson}
+          className={btnClass}>Show / Hide</button>
         {persons}
         {/* <Person name="Tanmay" age="21">My hobby is painting.</Person>
         <Person name="Vaibhav" age="19"/> */}

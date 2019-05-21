@@ -9,3 +9,18 @@
 .bold {
   font-weight: bold,
 }
+
+.App button:hover {
+  color: white;
+  background-color: lightgreen;
+}
+
+.App button.Red{
+  background-color: red;
+}
+
+.App button.Red:hover {
+  color: white;
+  background-color: salmon;
+}
+
