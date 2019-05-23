@@ -1,33 +1,12 @@
-// import React from 'react';
-// import Aux from '../../../hoc/Aux';
-
-// const orderSummary = (props) => {
-//     const ingredientSummary = Object.keys(props.ingredients)
-//                                 .map(igKey => {
-//                                     return (
-//                                         <li key={igKey}>
-//                                             <span style={{textTransform: "capitalize"}}>{igKey}</span> : {props.ingredients}
-//                                         </li>
-//                                     );
-//                                 });
-//     return (
-//         <Aux>
-//             <h3>Your Order</h3>
-//             <p>A Delicious Burger</p>
-//             <ul>
-//                 {ingredientSummary}
-//             </ul>
-//             <p>Continue to Checkout?</p>
-//         </Aux>
-//     );
-// };
-
-// export default orderSummary;
-
 import React, { Component } from 'react';
-import Aux from '../../../hoc/Aux';
+import Aux from '../../../hoc/Aux/Aux';
+import Button from '../../UI/Button/Button';
 
 class OrderSummary extends Component {
+
+    componentWillUpdate() {
+        console.log('[Order Summary] Update');
+    }
 
     render() {
         const ingredientSummary = Object.keys(this.props.ingredients)
@@ -46,6 +25,14 @@ class OrderSummary extends Component {
                     {ingredientSummary}
                 </ul>
                 <p><strong>Continue to checkout?</strong></p>
+                {/* <button>Cancel</button> */}
+                {/* <button>Continue</button> */}
+                <Button 
+                    btnType="Danger"
+                    clicked={this.props.purchaseCancelled}>Cancel</Button>
+                <Button 
+                    btnType="Success"
+                    clicked={this.props.purchaseContinued}>Continue</Button>
             </Aux>
         );
     }
