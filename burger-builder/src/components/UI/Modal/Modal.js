@@ -5,7 +5,7 @@ import Backdrop from '../BackDrop/BackDrop'
 
 class Modal extends Component {
     shouldComponentUpdate(nextProps, nextState){
-        return nextProps.show !== this.nextState
+        return nextProps.show !== this.nextState || nextProps.children !== this.props.children;
     }
 
     componentWillUpdate(){
